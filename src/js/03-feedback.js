@@ -5,7 +5,7 @@ const FORM_STORAGE = 'saved-form-data';
 
 let formData = {};
 
-formEl.addEventListener('input', throttle(onTypeInput, 1000));
+formEl.addEventListener('input', throttle(onTypeInput, 500));
 formEl.addEventListener('submit', onInputSubmit);
 
 dataStorage();
@@ -27,6 +27,7 @@ function dataStorage() {
 
 function onInputSubmit(event) {
     event.preventDefault();
+    console.log(formData);
     formEl.reset();
     localStorage.removeItem(FORM_STORAGE);
     formData = {};

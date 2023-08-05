@@ -4,10 +4,7 @@ import { galleryItems } from './gallery-items';
 import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css"
 
-console.log(galleryItems);
-
 const galleryListEl = document.querySelector(".gallery");
-console.log(galleryListEl);
 
 const addImageInList = imagesList => {
     return imagesList.map(({preview, original, description}) => {
