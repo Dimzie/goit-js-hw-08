@@ -11,6 +11,7 @@ formEl.addEventListener('submit', onInputSubmit);
 dataStorage();
 
 function dataStorage() {
+  try {
     let savedForm = localStorage.getItem(FORM_STORAGE);
   
     if (!savedForm) {
@@ -23,6 +24,9 @@ function dataStorage() {
       formEl.elements[name].value = savedForm[name];
       formData[name] = formEl.elements[name].value;
     });
+  } catch (error) {
+    console.log(error.message);
+  }
 }
 
 function onInputSubmit(event) {
